@@ -34,4 +34,6 @@ func NewRootCommand() *cobra.Command {
 	rootCmd.AddCommand(
 		NewMoveUntrackedCommand(&client),
 	)
+
+	return rootCmd
 }
