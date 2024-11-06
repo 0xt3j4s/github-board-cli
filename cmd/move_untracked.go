@@ -2,16 +2,12 @@ package cmd
 
 import (
 	"fmt"
-	// "io"
-	// "os"
-
 
 	ghBoardCLI "github.com/0xt3j4s/github-board-cli/pkg"
 
 	// "github.com/google/go-github/v39/github"
-	"github.com/google/go-github/github"
+	// "github.com/google/go-github/github"
 	"github.com/spf13/cobra"
-	// "github.com/spf13/viper"
 )
 
 type moveUntracked struct {
@@ -52,7 +48,8 @@ func MoveUntracked (client ghBoardCLI.Provider, userOpts moveUntracked) error {
 	// call another function to move the untracked items
 
 
-	var project *github.Project	= client.GetProjectByName(userOpts.ProjectName, userOpts.Org, userOpts.User, userOpts.Repo)
+	// var project *github.Project	= client.GetProjectByName(userOpts.ProjectName, userOpts.Org, userOpts.User, userOpts.Repo)
+	// fmt.Print(project.Name)
 
 	var columnId int64 
 	columnId, err := client.GetColumnID(userOpts.ProjectName, userOpts.ColumnName, userOpts.Org, userOpts.User, userOpts.Repo)
@@ -61,11 +58,11 @@ func MoveUntracked (client ghBoardCLI.Provider, userOpts moveUntracked) error {
 	}
 
 	fmt.Println("ColumnId: ", columnId)
-	fmt.Println("project: ", project.URL);
+	// fmt.Println("project: ", project.URL);
 
-	if err := client.MoveUntrackedIssues(); err != nil {
-		return fmt.Errorf("error moving untracked issues: %v", err)
-	}
+	// if err := client.MoveUntrackedIssues(); err != nil {
+	// 	return fmt.Errorf("error moving untracked issues: %v", err)
+	// }
 
 	// if err := moveUntrackedPRs(client, userOpts, columnID); err != nil {
 	// 	return fmt.Errorf("error moving untracked PRs: %v", err)

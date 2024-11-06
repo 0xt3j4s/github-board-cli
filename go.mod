@@ -5,6 +5,7 @@ go 1.23.1
 require (
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/go-github/v39 v39.2.0
+	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
 	golang.org/x/oauth2 v0.23.0
